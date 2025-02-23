@@ -1,7 +1,11 @@
 ---
 // import Welcome from '../components/Welcome.astro';
 // import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+
 const pageTitle = "私のAstroサイト";
+const titleColor = "maroon";
+const titleSize = "3.5rem";
 ---
 
 <html lang="ja">
@@ -11,6 +15,12 @@ const pageTitle = "私のAstroサイト";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style define:vars={{ titleColor, titleSize }}>
+      h1 {
+        color: var(--titleColor);
+        font-size: var(--titleSize);
+      }
+    </style>
   </head>
   <body>
     <a href="/">ホーム</a>

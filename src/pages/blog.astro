@@ -1,5 +1,10 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "私のAstro学習ブログ";
+
+const titleColor = "olivedrab";
+const titleSize = "3.4rem";
 ---
 
 <html lang="ja">
@@ -9,13 +14,19 @@ const pageTitle = "私のAstro学習ブログ";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style define:vars={{ titleColor, titleSize }}>
+      .blog-title {
+        color: var(--titleColor);
+        font-size: var(--titleSize);
+      }
+    </style>
   </head>
   <body>
     <a href="/">ホーム</a>
     <a href="/about/">概要</a>
     <a href="/blog/">ブログ</a>
 
-    <h1>{pageTitle}</h1>
+    <h1 class="blog-title">{pageTitle}</h1>
     <p>ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
 
     <ul>
